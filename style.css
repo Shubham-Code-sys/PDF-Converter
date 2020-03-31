@@ -1,0 +1,106 @@
+.dropbtn {
+    background-color: transparent;
+    /* color: ;
+    padding: 0px;
+    font-size: 16px;
+    border: none; */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 220px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2), -2px -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    /* margin-top: 14px; */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* sign in and sign up */
+.signup_btn{
+    color: fuchsia;
+    font-weight: 500;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.signup_btn:hover{
+    color: blueviolet;
+    text-decoration: none;
+}
+.signin_btn{
+    color: fuchsia;
+    font-weight: 500;
+    text-decoration: none;
+    border: 2px solid fuchsia;
+    padding: 10px;
+    border-radius: 20%;
+    transition: all 0.7s;
+}
+.signin_btn:hover{
+    color: white;
+    text-decoration: none;
+    background-color: fuchsia;
+}
+
+/* uploader section */
+.upload{
+    background-color: tomato;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.dropzone{
+    width: 100%;
+    background-color: coral!important;
+    /* opacity: 0.4; */
+    border: dashed!important;
+}
+.upload_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* details section */
+
+.add-div{
+    width: 100%;
+    height: auto;
+    margin: 100px 0;
+}
+.extra-div{
+    background: #fff;
+    border: medium none;
+    padding: 10px!important;
+    border-radius: 3px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+/* footer section */
+.footer{
+    background-color: #f8f9fa;
+}

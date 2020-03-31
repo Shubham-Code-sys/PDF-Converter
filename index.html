@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.0/dropzone.min.css"
+    integrity="sha256-NkyhTCRnLQ7iMv7F3TQWjVq25kLnjhbKEVPqGJBcCUg=" crossorigin="anonymous" />      <!--dropzone cdn-->
+    <title>Just PDF</title>
+</head>
+<body>
+    <!-- navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="">
+                <img src="background-img.png" width="30" height="30" class="d-inline-block align-middle" alt="Logo">
+                <span class="navbar-brand mb-0 h1">Just PDF</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="navbar-nav ml-auto">
+                    <div class="dropdown">
+                        <a class="dropbtn nav-item nav-link font-weight-bold">Convert to PDF <i class="fa fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                          <a href="#"><i class="far fa-file-word"></i> <i class="fa fa-caret-right"></i> Word to PDF</a>
+                          <a href="#"><i class="far fa-file-powerpoint"></i> <i class="fa fa-caret-right"></i> Powerpoint to PDF</a>
+                          <a href="#"><i class="far fa-file-excel"></i> <i class="fa fa-caret-right"></i> Excel to PDF</a>
+                          <a href="#"><i class="far fa-file-image"></i> <i class="fa fa-caret-right"></i> Image to PDF</a>
+                          <a href="#"><i class="fas fa-dove"></i> <i class="fa fa-caret-right"></i> OpenOffice to PDF</a>
+                          <a href="#"><i class="fas fa-atlas"></i> <i class="fa fa-caret-right"></i> eBook to PDF</a>
+                          <a href="#"><i class="fab fa-apple"></i> <i class="fa fa-caret-right"></i> iWork to PDF</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="dropbtn nav-item nav-link font-weight-bold">Convert from PDF <i class="fa fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                          <a href="#"><i class="far fa-file-word"></i> <i class="fa fa-caret-right"></i> PDF to Word</a>
+                          <a href="#"><i class="far fa-file-powerpoint"></i> <i class="fa fa-caret-right"></i> PDF to Powerpoint</a>
+                          <a href="#"><i class="far fa-file-excel"></i> <i class="fa fa-caret-right"></i> PDF to Excel</a>
+                          <a href="#"><i class="far fa-file-image"></i> <i class="fa fa-caret-right"></i> PDF to PNG</a>
+                          <a href="#"><i class="far fa-file-image"></i> <i class="fa fa-caret-right"></i> PDF to JPG</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="dropbtn nav-item nav-link font-weight-bold">PDF Tools <i class="fa fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                          <a href="#"><i class="fas fa-sync-alt"></i> <i class="fa fa-caret-right"></i> Online PDF Converter</a>
+                          <a href="#"><i class="far fa-object-ungroup"></i> <i class="fa fa-caret-right"></i> Merge PDF</a>
+                          <a href="#"><i class="fas fa-columns"></i> <i class="fa fa-caret-right"></i> Split PDF</a>
+                          <a href="#"><i class="fas fa-compress-arrows-alt"></i> <i class="fa fa-caret-right"></i> Compress PDF</a>
+                          <a href="#"><i class="fas fa-undo"></i> <i class="fa fa-caret-right"></i> Rotate PDF</a>
+                          <a href="#"><i class="far fa-trash-alt"></i> <i class="fa fa-caret-right"></i> Delete PDF Pages</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="dropbtn nav-item nav-link font-weight-bold">PDF Security <i class="fa fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#"><i class="fas fa-signature"></i> <i class="fa fa-caret-right"></i> Sign on PDF</a>
+                            <a href="#"><i class="fas fa-fingerprint"></i> <i class="fa fa-caret-right"></i> Protect PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ml-auto">
+                    <a href="" class="signup_btn">Sign Up</a>
+                    <a href="" class="signin_btn">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!-- uploading section start-->
+    <h1 class="text-center mt-5">Online PDF Converter</h1>
+    <p class="text-center">Free online pdf convert now in your hands</p>
+
+    <div class="container upload">
+        <form action="upload.php" class="dropzone" id="dropzoneFrom">
+
+        </form>
+    </div>
+    <div class="upload_btn">
+        <button type="button" class="btn btn-info" id="submit-all">Upload
+        </button>
+    </div>
+    <div id="preview"></div>
+    <!-- uploading section end-->
+
+    <!-- information and details section start -->
+    <section class="add-div">
+        <div class="container">
+            <div class="row">
+                <div class="extra-div col-lg-4 col-md-4 col-12">
+                    <h2>Easy to use</h2>
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa vero sapiente, dolore velit
+                        saepe tenetur delectus perspiciatis assumenda quidem. Omnis optio accusantium quidem, quos
+                        voluptates
+                        vel. Ea, quaerat nobis?</p>
+                </div>
+                <div class="extra-div col-lg-4 col-md-4 col-12">
+                    <h2>Awesome Design</h2>
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa vero sapiente, dolore velit
+                        saepe tenetur delectus perspiciatis assumenda quidem. Omnis optio accusantium quidem, quos
+                        voluptates
+                        vel. Ea, quaerat nobis?</p>
+                </div>
+                <div class="extra-div col-lg-4 col-md-4 col-12">
+                    <h2>Easy to customise</h2>
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa vero sapiente, dolore velit
+                        saepe tenetur delectus perspiciatis assumenda quidem. Omnis optio accusantium quidem, quos
+                        voluptates
+                        vel. Ea, quaerat nobis?</p>
+                </div>
+                <div class="extra-div col-lg-4 col-md-4 col-12">
+                    <h2>Easy to use</h2>
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa vero sapiente, dolore velit
+                        saepe tenetur delectus perspiciatis assumenda quidem. Omnis optio accusantium quidem, quos
+                        voluptates
+                        vel. Ea, quaerat nobis?</p>
+                </div>
+                <div class="extra-div col-lg-4 col-md-4 col-12">
+                    <h2>Awesome Design</h2>
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa vero sapiente, dolore velit
+                        saepe tenetur delectus perspiciatis assumenda quidem. Omnis optio accusantium quidem, quos
+                        voluptates
+                        vel. Ea, quaerat nobis?</p>
+                </div>
+                <div class="extra-div col-lg-4 col-md-4 col-12">
+                    <h2>Easy to customise</h2>
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa vero sapiente, dolore velit
+                        saepe tenetur delectus perspiciatis assumenda quidem. Omnis optio accusantium quidem, quos
+                        voluptates
+                        vel. Ea, quaerat nobis?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- information and details section end -->
+
+        <!-- All pdf converter list start -->
+
+    <!-- Footer -->
+    <footer class="page-footer font-small indigo footer">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-nowrap text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-thin text-uppercase mt-3 mb-4">Convert to PDF</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href=""><i class="far fa-file-word"></i> <i class="fa fa-caret-right"></i> Word to PDF</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="far fa-file-powerpoint"></i> <i class="fa fa-caret-right"></i> Powerpoint to PDF</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="far fa-file-excel"></i> <i class="fa fa-caret-right"></i> Excel to PDF</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="far fa-file-image"></i> <i class="fa fa-caret-right"></i> Image to PDF</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-dove"></i> <i class="fa fa-caret-right"></i> OpenOffice to PDF</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-atlas"></i> <i class="fa fa-caret-right"></i> eBook to PDF</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fab fa-apple"></i> <i class="fa fa-caret-right"></i> iWork to PDF</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-thin text-uppercase mt-3 mb-4">Convert from PDF</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href=""><i class="far fa-file-word"></i> <i class="fa fa-caret-right"></i> PDF to Word</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="far fa-file-powerpoint"></i> <i class="fa fa-caret-right"></i> PDF to Powerpoint</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="far fa-file-excel"></i> <i class="fa fa-caret-right"></i> PDF to Excel</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="far fa-file-image"></i> <i class="fa fa-caret-right"></i> PDF to PNG</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="far fa-file-image"></i> <i class="fa fa-caret-right"></i> PDF to JPG</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-thin text-uppercase mt-3 mb-4">PDF Tools</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href=""><i class="fas fa-sync-alt"></i> <i class="fa fa-caret-right"></i> Online PDF Converter</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="far fa-object-ungroup"></i> <i class="fa fa-caret-right"></i> Merge PDF</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-columns"></i> <i class="fa fa-caret-right"></i> Split PDF</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-compress-arrows-alt"></i> <i class="fa fa-caret-right"></i> Compress PDF</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-undo"></i> <i class="fa fa-caret-right"></i> Rotate PDF</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="far fa-trash-alt"></i> <i class="fa fa-caret-right"></i> Delete PDF Pages</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-thin text-uppercase mt-3 mb-4">PDF Security</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href=""><i class="fas fa-signature"></i> <i class="fa fa-caret-right"></i> Sign on PDF</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-fingerprint"></i> <i class="fa fa-caret-right"></i> Protect PDF</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="index.html"> Just PDF</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+    <!-- All pdf converter list end -->
+
+    <!-- all scripts -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.0/dropzone.min.js"
+    integrity="sha256-OG/103wXh6XINV06JTPspzNgKNa/jnP1LjPP5Y3XQDY=" crossorigin="anonymous"></script>   <!--Dropzone cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+    integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            Dropzone.options.dropzoneFrom = {
+                autoProcessQueue: false,
+                acceptedFiles:".png, .jpg, .jpeg, .txt, .gif, .bmp, .xlsx, .word, .pdf",
+                init: function () {
+                    var submitButton = documnet.querySelector('#submit-all');
+                    myDropzone = this;
+                    submitButton.addEventListner("click", function () {
+                       myDropzone.ProcessQueue();
+                    });
+                    this.on("complete", function () {
+                       if (this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0 ) {
+                           var _this = this;
+                           _this.removeAllFiles();
+                       };
+                       list_image();
+                    });
+                },
+            };
+        });
+
+        list_image();
+
+        function list_image(){
+            $.ajax({
+                url:"upload.php",
+                success:function (data) {
+                    $('#preview').html(data);   
+                }
+            })
+        }
+
+        $(document).on('click', '.remove_image', function () {
+            var name = $(this).attr('id');
+            $.ajax({
+                url:"upload.php",
+                method:"post",
+                data:{name:name},
+                success:function(data){
+                    list_image();
+                }
+            })
+        });
+    </script>
+</body>
+</html>
